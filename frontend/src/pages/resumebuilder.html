@@ -52,6 +52,8 @@ const uploadButton = document.getElementById("uploadexp");
                             
   output.textContent = experienceinput.value;
     console.log(experienceinput.value);
+    let experience = "Please create a resume based on the following experience: ${experienceinput.value}";
+    dsrequest(experience);
   });
   
 </script>
