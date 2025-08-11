@@ -39,28 +39,6 @@
   
 </div>
 
-<script type="module" src="../../../backend/main.js">
-
-  import dsrequest;
-  
-</script>
-  
-<script>
-
- console.log("Testing log functionality"); 
-const experienceinput = document.getElementById("experience-input");
-const output = document.getElementById("outputArea");
-const uploadButton = document.getElementById("uploadexp");
-
-  uploadButton.addEventListener("click", async () => {
-                            
-  output.textContent = experienceinput.value;
-    console.log(experienceinput.value);
-    let experience = "Please create a resume based on the following experience: ${experienceinput.value}";
-    dsrequest(experience);
-  });
-  
-</script>
-  
+<script type="module" src="../../../backend/main.js"></script>
 </body>
 </html>
