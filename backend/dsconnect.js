@@ -1,4 +1,4 @@
-import OpenAI from "./node_modules/openai";
+import OpenAI from "./node_modules/";
 
 const openai = new OpenAI({
         baseURL: 'https://api.deepseek.com',
