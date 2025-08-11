@@ -190,47 +190,7 @@
           outputEl.textContent = "Fetch error(2): " + error.message;
         }
       });
-
-      // Handle “Rewrite Resume” click
-      rewriteBtn.addEventListener("click", async () => {
-        const resumeText = resumeEl.value.trim();
-        const fieldText = fieldEl.value.trim();
-
-        if (!resumeText) {
-          alert(
-            "Please paste or upload your resume text first. PDF and DOCX only."
-          );
-          return;
-        }
-
-        outputEl.textContent = "Processing… please wait.";
-
-        try {
-          const resp = await fetch("/api/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              resumeText: resumeText,
-              field: fieldText || "General",
-            }),
-          });
-
-          if (!resp.ok) {
-            const err = await resp.json();
-            outputEl.textContent = "Error: " + (err.error || resp.statusText);
-            return;
-          }
-
-          const data = await resp.json();
-          if (data.message) {
-            outputEl.textContent = data.message;
-          } else {
-            outputEl.textContent = JSON.stringify(data, null, 2);
-          }
-        } catch (error) {
-          outputEl.textContent = "Fetch error(1): " + error.message;
-        }
-      });
+      
     </script>
   </body>
 </html>
